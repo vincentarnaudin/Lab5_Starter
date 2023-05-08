@@ -48,10 +48,10 @@ function init() {
       // utterThis.pitch = pitch.value;
       // utterThis.rate = rate.value;
       synth.speak(utterThis);
-      utterThis.onstart = (event) => {
+      utterThis.onstart = function (event) {
         document.querySelector("img").src = "assets/images/smiling-open.png";
       }
-      utterThis.onend = (event) => {
+      utterThis.onend = function (event) {
         document.querySelector("img").src = "assets/images/smiling.png";
       }
     }
@@ -62,17 +62,17 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
-  inputForm.onsubmit = (event) => {
+  inputForm.onsubmit = function (event) {
     event.preventDefault();
     pressSpeak();
     inputTxt.blur();
   };
 
-  voiceSelect.onchange = () =>  {
+  voiceSelect.onchange = function () {
     pressSpeak();
   };
 
-  button.onclick = () =>  {
+  button.onclick = function () {
     pressSpeak();
   };
 }
