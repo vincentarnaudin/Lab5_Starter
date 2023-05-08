@@ -2,7 +2,7 @@
 Vincent ARNAUDIN
 
 Link to your Continuous Integration introduction-to-github repo :
-[GitHub Actions]()
+[GitHub Actions](https://github.com/vincentarnaudin/intro-to-github)
 
 Link to your github pages site expose.html page : [Expose](https://vincentarnaudin.github.io/Lab5_Starter/expose.html)
 
