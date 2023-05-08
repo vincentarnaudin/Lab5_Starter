@@ -28,6 +28,15 @@ function init() {
       voiceSelect.appendChild(option);
     }
   }
+  
+  populateVoiceList();
+  if (
+    typeof speechSynthesis !== "undefined" &&
+    speechSynthesis.onvoiceschanged !== undefined
+  ) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+  }
+
 
   function pressSpeak() {
     if (inputTxt.value !== "") {
@@ -55,11 +64,6 @@ function init() {
         document.querySelector("img").src = "assets/images/smiling.png";
       }
     }
-  }
-
-  populateVoiceList();
-  if (speechSynthesis.onvoiceschanged !== undefined) {
-    speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
   inputForm.onsubmit = function (event) {
